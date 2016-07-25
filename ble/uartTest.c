@@ -65,7 +65,7 @@ int main()
 	if (uart0_filestream != -1)
 	{
 		int count = write(uart0_filestream, &tx_buffer[0], (p_tx_buffer - &tx_buffer[0]));		//Filestream, bytes to write, number of bytes to write
-		printf("filestream ok")
+		printf("filestream ok");
 		if (count < 0)
 		{
 			printf("UART TX error\n");
