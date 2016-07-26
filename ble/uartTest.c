@@ -74,15 +74,15 @@ int main()
 	}
 */
 /// Receiving bytes
-while(1)
+while(true)
 {
 
 	//----- CHECK FOR ANY RX BYTES -----
 	if (uart0_filestream != -1)
 	{
 		// Read up to 255 characters from the port if they are there
-		unsigned char rx_buffer[512];
-		int rx_length = read(uart0_filestream, (void*)rx_buffer, 511);		//Filestream, buffer to store in, number of bytes to read (max)
+		unsigned char rx_buffer[256];
+		int rx_length = read(uart0_filestream, (void*)rx_buffer, 255);		//Filestream, buffer to store in, number of bytes to read (max)
 		if (rx_length < 0)
 		{
 			//An error occured (will occur if there are no bytes)
