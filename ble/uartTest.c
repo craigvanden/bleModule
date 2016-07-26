@@ -74,7 +74,7 @@ int main()
 	}
 */
 /// Receiving bytes
-while()
+while(1)
 {
 
 	//----- CHECK FOR ANY RX BYTES -----
@@ -86,19 +86,19 @@ while()
 		if (rx_length < 0)
 		{
 			//An error occured (will occur if there are no bytes)
-			printf("case 1");
+
 		}
 		else if (rx_length == 0)
 		{
 			//No data waiting
-			printf("case 2");
+
 		}
 		else
 		{
 			//Bytes received
 			rx_buffer[rx_length] = '\0';
 			printf("%i bytes read : %s\n", rx_length, rx_buffer);
-		printf("case 3");
+
 		}
 	}
 
