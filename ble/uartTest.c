@@ -75,7 +75,7 @@ int main()
 */
 /// Receiving bytes
 
-loop()
+while(true)
 {
 	//----- CHECK FOR ANY RX BYTES -----
 	if (uart0_filestream != -1)
