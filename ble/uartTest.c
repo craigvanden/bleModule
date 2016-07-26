@@ -51,6 +51,7 @@ int main()
 
 //Transmitting bytes
 
+/*
 	//----- TX BYTES -----
 	unsigned char tx_buffer[20];
 	unsigned char *p_tx_buffer;
@@ -71,7 +72,7 @@ int main()
 			printf("UART TX error\n");
 		}
 	}
-
+*/
 /// Receiving bytes
 
 
