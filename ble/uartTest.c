@@ -49,20 +49,32 @@ int main()
 	tcflush(uart0_filestream, TCIFLUSH);
 	tcsetattr(uart0_filestream, TCSANOW, &options);
 
+while(1)
+{
 //Transmitting bytes
 
-/*
+
 	//----- TX BYTES -----
 	unsigned char tx_buffer[20];
 	unsigned char *p_tx_buffer;
-	
+
 	p_tx_buffer = &tx_buffer[0];
+
+	char enterText[20];
+	printf("what is your command");
+	fgets(enterText,20,stdin);
+	*p_tx_buffer++ = enterText[0];
+	*p_tx_buffer++ = enterText[1];
+	*p_tx_buffer++ = enterText[2];
+	*p_tx_buffer++ = enterText[3];
+	*p_tx_buffer++ = enterText[4];
+	/*
 	*p_tx_buffer++ = 'H';
 	*p_tx_buffer++ = 'e';
 	*p_tx_buffer++ = 'l';
 	*p_tx_buffer++ = 'l';
 	*p_tx_buffer++ = 'o';
-	
+	*/
 	if (uart0_filestream != -1)
 	{
 		int count = write(uart0_filestream, &tx_buffer[0], (p_tx_buffer - &tx_buffer[0]));		//Filestream, bytes to write, number of bytes to write
@@ -72,9 +84,10 @@ int main()
 			printf("UART TX error\n");
 		}
 	}
-*/
+
 /// Receiving bytes
-while(true)
+int incounter = 0;
+while(incounter < 10000)
 {
 
 	//----- CHECK FOR ANY RX BYTES -----
@@ -101,7 +114,9 @@ while(true)
 
 		}
 	}
+	incounter=incounter+1;
 
+}
 }
 	
 
